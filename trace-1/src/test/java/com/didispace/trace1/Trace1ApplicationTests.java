@@ -1,4 +1,4 @@
-package com.didispace.hello;
+package com.didispace.trace1;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,12 +7,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HelloApplicationTests {
+public class Trace1ApplicationTests {
 
 	@Test
 	public void contextLoads() {
 	}
-
-
 
 }

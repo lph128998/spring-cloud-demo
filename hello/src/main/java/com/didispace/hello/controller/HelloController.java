@@ -3,13 +3,16 @@ package com.didispace.hello.controller;
 import com.didispace.hello.po.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author liupeihua
@@ -29,14 +32,15 @@ public class HelloController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() throws Exception {
-        ServiceInstance instance = client.getLocalServiceInstance();
-        // 让处理线程等待几秒钟
-        int sleepTime = new Random().nextInt(3000);
-        logger.info("sleepTime:" + sleepTime);
-        Thread.sleep(sleepTime);
-        logger.info("/hello,host:" + instance.getHost() + ", port:" + instance.getPort() + ",service_id:" + instance.getServiceId());
+         ServiceInstance instance = client.getLocalServiceInstance();
+         // 让处理线程等待几秒钟
+         int sleepTime = new Random().nextInt(3000);
+         logger.info("sleepTime:" + sleepTime);
+         Thread.sleep(sleepTime);
+         logger.info("/hello,host:" + instance.getHost() + ", port:" + instance.getPort() + ",service_id:" + instance.getServiceId());
 
-        counterService.increment("hello.index.count");
+         counterService.increment("hello.index.count");
+
         return "Hello World!";
     }
 
