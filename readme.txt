@@ -58,30 +58,3 @@ http://localhost:15672/
 
 
 
-
-
-/usr/local/bin/nginx
-/usr/local/etc/nginx
-/usr/local/opt/nginx
-/usr/local/var/log/nginx
-/usr/local/var/run/nginx
-
-
-
-/usr/local/etc/nginx/nginx.conf
-
-
-
-催收分阶段实施。产品确定第一阶段优先的功能，争取1个月内上线。
-
-
-业务需求
-产品化
-
-
-
-系统上线功能性检查，需要半小时。
-
-
-027-81813041
-
