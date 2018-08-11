@@ -50,11 +50,23 @@ java -jar target/rabbitmq-hello-0.0.1-SNAPSHOT.jar
 
 
 #启动rabbitmq
-rabbitmq-server
+rabbitmq-server start
 #rabbitmq通过web管理
 rabbitmq-plugins enable rabbitmq_management
 #账号/密码默认guest/guest
 http://localhost:15672/
 
+#sleuth
+#启动trace1
+java -jar target/trace1-0.0.1-SNAPSHOT.jar
+#启动trace2
+java -jar target/trace2-0.0.1-SNAPSHOT.jar 
+#访问trace1
+http://localhost:9101/trace1
+
+#启动zipkin
+java -jar target/zipkin-server-0.0.1-SNAPSHOT.jar 
+#访问zipkin
+http://localhost:9411/zipkin/
 
 
